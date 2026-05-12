@@ -7,6 +7,7 @@ const TARGET = "jobs.stevenagefc.com";
 const CUSTOM_HOME = `<!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="google-site-verification" content="tvc2WXepi8RaSp1M6V0Js56kQ9JW2JdVwZe771-xn58" />
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Unique Hire — Find Your Next Role</title>
