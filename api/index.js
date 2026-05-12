@@ -9,61 +9,125 @@ const CUSTOM_HOME = `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="google-site-verification" content="tvc2WXepi8RaSp1M6V0Js56kQ9JW2JdVwZe771-xn58" />
-
 <title>Unique Hire — Find Your Next Role</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 
 <style>
+*,*::before,*::after{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
+}
+
 body{
   background:#080f0a;
   color:#fff;
-  font-family:sans-serif;
-  margin:0;
+  font-family:'DM Sans',sans-serif;
+}
+
+header{
+  padding:20px 40px;
+  background:#0d160f;
+  border-bottom:1px solid #1e3022;
+}
+
+.logo{
+  color:#00e676;
+  font-size:28px;
+  text-decoration:none;
+  font-weight:800;
 }
 
 .hero{
-  padding:120px 30px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   text-align:center;
+  padding:100px 20px;
 }
 
-.btn{
+.hero-title{
+  font-size:70px;
+  line-height:1;
+  margin-bottom:25px;
+}
+
+.hero-title span{
+  color:#00e676;
+}
+
+.hero-sub{
+  max-width:700px;
+  color:#8fb59a;
+  font-size:18px;
+  line-height:1.7;
+  margin-bottom:40px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+}
+
+.btn-primary{
   background:#00e676;
   color:#000;
-  padding:15px 30px;
+  padding:16px 40px;
   text-decoration:none;
-  display:inline-block;
-  margin-top:20px;
   border-radius:4px;
   font-weight:bold;
 }
 
+.btn-ghost{
+  border:1px solid #1e3022;
+  color:#fff;
+  padding:16px 40px;
+  text-decoration:none;
+  border-radius:4px;
+}
+
 .ad-wrap{
+  width:100%;
   display:flex;
   justify-content:center;
-  margin:30px auto;
+  margin-bottom:25px;
 }
 </style>
+
 </head>
 
 <body>
 
-<header style="padding:20px;background:#0d160f">
-  <h2>Unique Hire</h2>
+<header>
+  <a href="/" class="logo">Unique Hire</a>
 </header>
 
 <section class="hero">
 
-  <h1>Find Your Dream Job</h1>
-  <p>Thousands of jobs available worldwide.</p>
+  <h1 class="hero-title">
+    Find work that feels
+    <span>uniquely</span> yours.
+  </h1>
 
-  <!-- ADSTERRA AD START -->
-  <div class="ad-wrap">
+  <p class="hero-sub">
+    Unique Hire connects ambitious people with the roles they were made for.
+    Real jobs. Real people. No noise.
+  </p>
 
-    <script type="text/javascript">
+  <div class="hero-actions">
+
+    <!-- ADSTERRA AD START -->
+    <div class="ad-wrap">
+
+      <script type="text/javascript">
       atOptions = {
         'key' : '03d4b279c0b6ec0b741bce74f9127cff',
         'format' : 'iframe',
@@ -71,17 +135,25 @@ body{
         'width' : 728,
         'params' : {}
       };
-    </script>
+      </script>
 
-    <script
+      <script
       type="text/javascript"
       src="//www.highperformanceformat.com/03d4b279c0b6ec0b741bce74f9127cff/invoke.js">
-    </script>
+      </script>
+
+    </div>
+    <!-- ADSTERRA AD END -->
+
+    <a href="/jobs/" class="btn-primary">
+      Browse All Jobs →
+    </a>
+
+    <a href="/careers-advice/" class="btn-ghost">
+      Career Advice
+    </a>
 
   </div>
-  <!-- ADSTERRA AD END -->
-
-  <a href="/jobs/" class="btn">Browse Jobs</a>
 
 </section>
 
@@ -91,6 +163,7 @@ body{
 function getInject() {
   return `
 <style>
+
 body{
   background:#080f0a!important;
   color:#fff!important;
@@ -104,12 +177,12 @@ body{
   right:0;
   height:64px;
   background:#0d160f;
+  border-bottom:1px solid #1e3022;
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:0 30px;
   z-index:999999;
-  border-bottom:1px solid #1e3022;
 }
 
 #uh-bar a{
@@ -118,24 +191,29 @@ body{
   margin-left:20px;
 }
 
-.adsterra-container{
+.ad-wrap-inject{
+  width:100%;
   display:flex;
   justify-content:center;
   margin:25px auto;
 }
+
 </style>
 
 <div id="uh-bar">
-  <div style="color:white;font-weight:bold">Unique Hire</div>
+
+  <div style="color:#fff;font-weight:800;">
+    Unique Hire
+  </div>
 
   <nav>
     <a href="/jobs/">Jobs</a>
     <a href="/careers-advice/">Advice</a>
   </nav>
+
 </div>
 
-<!-- AD INJECT -->
-<div class="adsterra-container">
+<div class="ad-wrap-inject">
 
 <script type="text/javascript">
 atOptions = {
@@ -161,8 +239,11 @@ export default async function handler(req) {
   const proxyHost = new URL(req.url).host;
   const requestURL = new URL(req.url);
 
-  // CUSTOM HOMEPAGE
-  if (requestURL.pathname === "/" || requestURL.pathname === "") {
+  // HOMEPAGE
+  if (
+    requestURL.pathname === "/" ||
+    requestURL.pathname === ""
+  ) {
     return new Response(CUSTOM_HOME, {
       status: 200,
       headers: {
@@ -171,7 +252,6 @@ export default async function handler(req) {
     });
   }
 
-  // REMOVE BAD HEADERS
   const STRIP = [
     "connection",
     "keep-alive",
@@ -185,6 +265,8 @@ export default async function handler(req) {
     "x-forwarded-for",
     "x-real-ip",
     "cf-connecting-ip",
+    "cf-ipcountry",
+    "true-client-ip",
   ];
 
   const cleanHeaders = {};
@@ -217,7 +299,9 @@ export default async function handler(req) {
       requestURL.pathname +
       requestURL.search;
 
-    const response = await fetch(fetchURL, {
+    let response;
+
+    response = await fetch(fetchURL, {
       method: req.method,
       headers: upstreamHeaders,
       body:
@@ -228,28 +312,23 @@ export default async function handler(req) {
       redirect: "manual",
     });
 
+    const SKIP_RES = [
+      "content-encoding",
+      "transfer-encoding",
+      "content-length",
+      "connection"
+    ];
+
     const resHeaders = new Headers();
 
     for (const [k, v] of response.headers.entries()) {
 
-      if (
-        [
-          "content-encoding",
-          "transfer-encoding",
-          "content-length",
-          "connection",
-        ].includes(k.toLowerCase())
-      ) {
+      if (SKIP_RES.includes(k.toLowerCase())) {
         continue;
       }
 
       resHeaders.set(k, v);
     }
-
-    // IMPORTANT
-    // REMOVE CSP + FRAME BLOCKING
-    resHeaders.delete("content-security-policy");
-    resHeaders.delete("x-frame-options");
 
     const ct =
       response.headers.get("content-type") || "";
@@ -257,40 +336,27 @@ export default async function handler(req) {
     // HTML
     if (ct.includes("text/html")) {
 
-      let body = await response.text();
+      let body =
+        rewrite(await response.text());
 
-      body = rewrite(body);
-
-      // inject navbar + ad
       body = body.replace(
         /<body[^>]*>/i,
         (m) => m + getInject()
       );
 
+      resHeaders.set(
+        "content-type",
+        "text/html; charset=utf-8"
+      );
+
       return new Response(body, {
         status: response.status,
-        headers: {
-          ...Object.fromEntries(resHeaders),
-          "content-type":
-            "text/html; charset=utf-8",
-        },
+        headers: resHeaders,
       });
     }
 
     // CSS
     if (ct.includes("text/css")) {
-
-      return new Response(
-        rewrite(await response.text()),
-        {
-          status: response.status,
-          headers: resHeaders,
-        }
-      );
-    }
-
-    // JS
-    if (ct.includes("javascript")) {
 
       return new Response(
         rewrite(await response.text()),
@@ -307,29 +373,42 @@ export default async function handler(req) {
       ct.includes("xml")
     ) {
 
+      resHeaders.set(
+        "content-type",
+        "application/xml; charset=utf-8"
+      );
+
       return new Response(
         rewrite(await response.text()),
         {
           status: response.status,
-          headers: {
-            ...Object.fromEntries(resHeaders),
-            "content-type":
-              "application/xml; charset=utf-8",
-          },
+          headers: resHeaders,
         }
       );
     }
 
-    // ALL OTHER FILES
+    // JAVASCRIPT
+    if (ct.includes("javascript")) {
+
+      return new Response(
+        rewrite(await response.text()),
+        {
+          status: response.status,
+          headers: resHeaders,
+        }
+      );
+    }
+
+    // OTHER FILES
     return new Response(response.body, {
       status: response.status,
       headers: resHeaders,
     });
 
-  } catch (err) {
+  } catch (error) {
 
     return new Response(
-      "Proxy Error: " + err.message,
+      "Proxy error: " + error.message,
       {
         status: 500,
       }
