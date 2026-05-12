@@ -9,6 +9,8 @@ const CUSTOM_HOME = `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8"/>
 <meta name="google-site-verification" content="4tBoZuERZQhL4gecVrulD8XdH5Ave4PxYOEj05_a834" />
+<meta name="google-site-verification" content="vglBKfGexI4mC_6O5dPg7kvBYVNvvCKb8zY8yNg16is" />
+<meta name="google-site-verification" content="6O_4PKaspM8EAXBvB8UPgmHPbYSnjThmINO-NnNgcs8" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Unique Hire — Find Your Next Role</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
