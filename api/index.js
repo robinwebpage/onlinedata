@@ -7,17 +7,6 @@ const TARGET = "jobs.stevenagefc.com";
 const CUSTOM_HOME = `<!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-  atOptions = {
-    'key' : '03d4b279c0b6ec0b741bce74f9127cff',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/03d4b279c0b6ec0b741bce74f9127cff/invoke.js"></script>
-
 <meta name="google-site-verification" content="tvc2WXepi8RaSp1M6V0Js56kQ9JW2JdVwZe771-xn58" />
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
@@ -101,6 +90,16 @@ footer{border-top:1px solid var(--border);padding:60px 48px 40px;display:flex;ju
 </style>
 </head>
 <body>
+<script>
+  atOptions = {
+    'key' : '03d4b279c0b6ec0b741bce74f9127cff',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/03d4b279c0b6ec0b741bce74f9127cff/invoke.js"></script>
 <header>
   <a href="/" class="logo"><span class="logo-dot"></span>Unique Hire</a>
   <nav>
